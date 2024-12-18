@@ -1,0 +1,4 @@
+name: LunaClans
+version: '${project.version}'
+main: org.novasparkle.lunaclans.LunaClans
+api-version: '1.16'
