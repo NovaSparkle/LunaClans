@@ -1,0 +1,28 @@
+title: "{M}Клановое меню"
+size: 45
+decoration:
+  enable: true
+  material: BLACK_STAINED_GLASS_PANE
+  slots:
+    - "0-9"
+    - "17-18"
+    - "26-27"
+    - "35-44"
+items:
+  createClan:
+    material: FIREWORK_STAR
+    position:
+      row: 3
+      column: 3
+    displayName: "{M}Создать клан"
+    lores: [ ]
+    enchanted: false
+
+  ClanList:
+    material: PAPER
+    position:
+      row: 3
+      column: 7
+    displayName: "{M}Список кланов"
+    lores: [ ]
+    enchanted: false

@@ -1,0 +1,35 @@
+colors:
+  PREFIX:
+    abbr: '\{P\}'
+    variable: "&x&D&5&B&3&F&D[&x&9&8&6&3&E&7Кланы&x&D&5&B&3&F&D]"
+  MAIN_COLOR:
+    abbr: '\{M\}'
+    variable: "&x&9&8&6&3&E&7"
+  SECONDARY_COLOR:
+    abbr: '\{S\}'
+    variable: "&x&D&5&B&3&F&D"
+  ERROR_COLOR:
+    abbr: '\{E\}'
+    variable: "&x&F&F&3&B&3&B"
+  PURPLE_COLOR:
+    abbr: '\{R\}'
+    variable: '&x&A&F&4&7&F&F'
+
+
+messages:
+  clickableText: "{M}Создать клан"
+  createClanMessage: "{P} {S}Клик -> "
+  clanCreated: "{P} {M}Клан успешно создан!"
+  cannotPromote: "{P} {M}Невозможно повысить участника {S}[member] {M}до статуса {S}[status]"
+  promoted: "{P} {M}участник {S}[member] повышен до статуса {S}[status]"
+  cannotDemote: "{P} {M}Невозможно понизить участника {S}[member] {M}до статуса {S}[status]"
+  demoted: "{P} {M}участник {S}[member] понижен до статуса {S}[status]"
+  reloadConfig: "{P} {M}Конфигурация перезагружена!"
+
+  lowerStatusPromote: '{P} {M}Статус игрока {S}[player] {M}выше вашего, невозможно его повысить'
+  equalStatusPromote: '{P} {M}Статус игрока {S}[player] {M}равен вашему, невозможно его повысить'
+
+  lowerStatusDemote: '{P} {M}Статус игрока {S}[player] {M}выше вашего, невозможно его понизить'
+  equalStatusDemote: '{P} {M}Статус игрока {S}[player] {M}равен вашему, невозможно его понизить'
+
+  minStatus: '{P} {M}Статус игрока {S}[player] минимальный, невозможно его понизить'

@@ -1,0 +1,84 @@
+title: "{M}Управление участником"
+size: 45
+decoration:
+  enable: true
+  material: BLACK_STAINED_GLASS_PANE
+  slots:
+    - "0-9"
+    - "17-18"
+    - "26-27"
+    - "35-44"
+items:
+  back:
+    material: ARROW
+    displayName: " {M}Обратно"
+    position:
+      row: 6
+      column: 5
+    enchanted: false
+
+  promote:
+    material: PRISMARINE_SHARD
+    position:
+      row: 3
+      column: 2
+    displayName: "{S}Повысить участника"
+    lores:
+      - " "
+      - " {M}[now] {S}-> {M}[next]"
+      - " "
+    enchanted: false
+
+  demote:
+    material: MAGMA_CREAM
+    position:
+      row: 3
+      column: 4
+    displayName: "{S}Понизить участника"
+    lores:
+      - " "
+      - " {M}[now] {S}-> {M}[next]"
+      - " "
+    enchanted: false
+
+  changeLeader:
+    material: ENDER_EYE
+    position:
+      row: 3
+      column: 6
+    displayName: "{S}Передать права на клан"
+    lores:
+      - " "
+      - " {M}Чтобы передать права"
+      - " {M}На клан, нужно ввести"
+      - " {M}Команду /lsc newleader [Игрок]"
+      - " {M}После чего, придется"
+      - " {M}Подтвердить свои действия"
+      - " "
+    enchanted: false
+
+  kickMember:
+    material: BARRIER
+    position:
+      row: 3
+      column: 8
+    displayName: "{S}Изгнать участника"
+    lores:
+      - " "
+      - " {M}Игрок [player] больше"
+      - " {M}Не будет числиться в клане"
+      - " "
+    enchanted: false
+
+  info:
+    material: WRITABLE_BOOK
+    position:
+      row: 1
+      column: 5
+    displayName: " {M}Текущая Информация"
+    lores:
+      - " "
+      - " {M}Участник {S}-> {M}[member]"
+      - " {M}Статус {S}-> {M}[status]"
+      - " "
+    enchanted: false

@@ -1,0 +1,60 @@
+title: "{M}Главное меню"
+size: 54
+decoration:
+  enable: true
+  material: BLACK_STAINED_GLASS_PANE
+  slots:
+    - "0-9"
+    - "17-18"
+    - "26-27"
+    - "35-36"
+    - "44-53"
+items:
+  PlayersList:
+    material: WRITABLE_BOOK
+    position:
+      row: 3
+      column: 4
+    displayName: "&cВсе участники"
+    lores: [ ]
+    enchanted: false
+  bank:
+    material: GOLD_INGOT
+    position:
+      row: 3
+      column: 5
+    displayName: " &cКазна"
+    lores: [ ]
+    enchanted: false
+  clanLevelUp:
+    material: EMERALD
+    position:
+      row: 3
+      column: 6
+    displayName: " &cУровни"
+    lores: [ ]
+    enchanted: false
+  storage:
+    material: BARREL
+    position:
+      row: 4
+      column: 4
+    displayName: "&cХранилище"
+    lores: [ ]
+    enchanted: false
+  shop:
+    material: ENDER_CHEST
+    position:
+      row: 4
+      column: 5
+    displayName: "&cМагазин"
+    lores: [ ]
+    enchanted: false
+  spawner:
+    material: WRITABLE_BOOK
+    position:
+      row: 4
+      column: 6
+    displayName: "&cЛинк Спавнера"
+    lores: [ ]
+    enchanted: false

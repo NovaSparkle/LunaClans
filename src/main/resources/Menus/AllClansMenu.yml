@@ -1,0 +1,53 @@
+title: "{M}Все кланы"
+size: 54
+decoration:
+  enable: true
+  material: BLACK_STAINED_GLASS_PANE
+  slots:
+    - "0-9"
+    - "17-18"
+    - "26-27"
+    - "35-36"
+    - "44-53"
+items:
+  ClanItem:
+    - " "
+    - " {M}Участников: {S}[players]"
+    - " {M}Лидер: {S}[leader]"
+    - " {M}Уровень: {S}[level]"
+    - " {M}Банк: {S}[balance]"
+    - " "
+  next:
+    material: SPECTRAL_ARROW
+    displayName: " {M}Следующая страница"
+    position:
+      row: 6
+      column: 9
+    enchanted: false
+  previous:
+    material: SPECTRAL_ARROW
+    displayName: " {M}Предыдующая страница"
+    position:
+      row: 6
+      column: 8
+    enchanted: false
+  back:
+    material: ARROW
+    displayName: "{M}Обратно"
+    position:
+      row: 6
+      column: 5
+    enchanted: false
+  info:
+    material: WRITABLE_BOOK
+    position:
+      row: 1
+      column: 5
+    displayName: " {S}Информация"
+    lores:
+      - " "
+      - " {M}Здесь представлен список"
+      - " {S}Всех {M}кланов сервера"
+      - " {M}Выбирай клан по душе"
+      - " {M}И вступай в его ряды!"
+      - " "
