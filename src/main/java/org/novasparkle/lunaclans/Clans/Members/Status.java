@@ -18,7 +18,7 @@ public enum Status {
         this.prefix = LunaClans.getINSTANCE().getConfig().getString("StatusPrefixes." + this.name());
     }
     public boolean isLower(Status status) {
-        return this.getPriority() <= status.getPriority();
+        return this.getPriority() < status.getPriority();
     }
     public Status next() {
         if (this.priority > values().length - 1) return null;

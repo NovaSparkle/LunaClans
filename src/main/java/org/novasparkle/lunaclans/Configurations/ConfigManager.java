@@ -2,8 +2,8 @@ package org.novasparkle.lunaclans.Configurations;
 
 import lombok.Getter;
 import org.bukkit.configuration.ConfigurationSection;
-import org.example.novasparkle.Configuration.IConfig;
 import org.novasparkle.lunaclans.LunaClans;
+import org.novasparkle.lunaspring.Configuration.IConfig;
 
 import java.util.List;
 

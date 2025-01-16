@@ -3,7 +3,7 @@ size: 54
 decoration:
   enable: true
   material: BLACK_STAINED_GLASS_PANE
-  slots:
+  slotsStr:
     - "0-9"
     - "17-18"
     - "26-27"

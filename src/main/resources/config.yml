@@ -1,0 +1,3 @@
+clan:
+  createCommand: '/clan create [tag] [prefix]'
+  changePrefix: '/clan prefix [new prefix]'

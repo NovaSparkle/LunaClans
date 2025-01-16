@@ -11,12 +11,18 @@ decoration:
     - "44-53"
 items:
   ClanItem:
-    - " "
-    - " {M}Участников: {S}[players]"
-    - " {M}Лидер: {S}[leader]"
-    - " {M}Уровень: {S}[level]"
-    - " {M}Банк: {S}[balance]"
-    - " "
+    material: WHITE_BANNER
+    displayName: ""
+    amount: 1
+    lore:
+      - " "
+      - " {M}Участников: {S}[players]"
+      - " {M}Лидер: {S}[leader]"
+      - " {M}Уровень: {S}[level]"
+      - " {M}Банк: {S}[balance]"
+      - " "
+    ignore: true
+
   next:
     material: SPECTRAL_ARROW
     displayName: " {M}Следующая страница"
@@ -43,11 +49,9 @@ items:
     position:
       row: 1
       column: 5
-    displayName: " {S}Информация"
+    displayName: " {M}Информация"
     lores:
-      - " "
+      - ""
       - " {M}Здесь представлен список"
-      - " {S}Всех {M}кланов сервера"
-      - " {M}Выбирай клан по душе"
-      - " {M}И вступай в его ряды!"
-      - " "
+      - " {M}Всех кланов сервера"
+      - ""

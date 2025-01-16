@@ -1,28 +1,35 @@
 title: "{M}Клановое меню"
 size: 45
 decoration:
-  enable: true
-  material: BLACK_STAINED_GLASS_PANE
-  slots:
-    - "0-9"
-    - "17-18"
-    - "26-27"
-    - "35-44"
+  1:
+    material: BLACK_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: []
+    amount: 1
+    slots:
+      - "0-9"
+      - "17-18"
+      - "26-27"
+      - "35-44"
 items:
-  createClan:
+  ClanCreateButton:
     material: FIREWORK_STAR
-    position:
+    slot:
       row: 3
       column: 3
     displayName: "{M}Создать клан"
-    lores: [ ]
+    lore: [ ]
+    amount: 1
     enchanted: false
+    reflected: true
 
   ClanList:
     material: PAPER
-    position:
+    slot:
       row: 3
       column: 7
     displayName: "{M}Список кланов"
-    lores: [ ]
+    lore: [ ]
+    amount: 1
     enchanted: false
+    switchMenu: "ClansList"

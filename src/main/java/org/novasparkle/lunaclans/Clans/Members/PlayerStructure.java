@@ -2,7 +2,7 @@ package org.novasparkle.lunaclans.Clans.Members;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.bukkit.entity.Player;
+import org.bukkit.OfflinePlayer;
 import org.novasparkle.lunaclans.Configurations.MsgManager;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class PlayerStructure {
     private List<Member> members = new ArrayList<>();
     private final int membersCount;
 
-    public PlayerStructure(Player leader) {
+    public PlayerStructure(OfflinePlayer leader) {
         this.leader = new Member(leader.getName(), Status.LEADER);
         this.members.add(this.leader);
         this.membersCount = 1;
@@ -27,7 +27,7 @@ public class PlayerStructure {
         this.members.add(this.leader);
         this.membersCount = members.size();
     }
-    public boolean containsMember(Player player) {
+    public boolean containsMember(OfflinePlayer player) {
         if (this.members.isEmpty()) return false;
         return this.getMembers().stream().anyMatch(m -> m.getPlayer().getUniqueId().equals(player.getUniqueId()));
     }
@@ -40,8 +40,8 @@ public class PlayerStructure {
     public List<Member> getMembersByStatus(Status status) {
         return this.members.stream().filter(m -> m.getStatus().equals(status)).collect(Collectors.toList());
     }
-    public Status getMemberStatus(String player) {
-        return this.members.stream().filter(p -> p.getNickName().equals(player)).map(Member::getStatus).findFirst().orElse(null);
+    public Status getMemberStatus(String nick) {
+        return this.members.stream().filter(p -> p.getNickName().equals(nick)).map(Member::getStatus).findFirst().orElse(null);
     }
     public Status getMemberStatus(Member member) {
         return this.members.stream().filter(p -> p.equals(member)).map(Member::getStatus).findFirst().orElse(null);
@@ -59,10 +59,13 @@ public class PlayerStructure {
 
         } else {
             Status newStatus = status.next();
-            member.setStatus(newStatus);
-
             assert newStatus != null;
-            invoker.sendMessage(MsgManager.getMessage("demoted")
+            if (newStatus.equals(invoker.getStatus())) {
+                invoker.sendMessage(MsgManager.getMessage("nextStatusIsEquals"));
+                return;
+            }
+            member.setStatus(newStatus);
+            invoker.sendMessage(MsgManager.getMessage("promoted")
                     .replace("[member]", member.getNickName())
                     .replace("[status]", newStatus.getPrefix()));
         }

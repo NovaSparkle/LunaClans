@@ -17,9 +17,19 @@ colors:
 
 
 messages:
-  clickableText: "{M}Создать клан"
-  createClanMessage: "{P} {S}Клик -> "
+  noPermission: '{P} {E}У вас нет прав на выполение этой команды!'
+
+  clickText: "    Создать клан"
+  createClanMessage: "    Клик -> "
+  prefixChangeText: "    Сменить префикс клана {Клик}"
+  inviteText: "    Пригласить игрока в клан {Клик}"
+
+  decorativeString: '⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶'
+
+  playerOnline: "{R}Онлайн"
+
   clanCreated: "{P} {M}Клан успешно создан!"
+  noConsole: "{P} {E}Команду можно выполнять только от имени игрока!"
   cannotPromote: "{P} {M}Невозможно повысить участника {S}[member] {M}до статуса {S}[status]"
   promoted: "{P} {M}участник {S}[member] повышен до статуса {S}[status]"
   cannotDemote: "{P} {M}Невозможно понизить участника {S}[member] {M}до статуса {S}[status]"
@@ -31,5 +41,7 @@ messages:
 
   lowerStatusDemote: '{P} {M}Статус игрока {S}[player] {M}выше вашего, невозможно его понизить'
   equalStatusDemote: '{P} {M}Статус игрока {S}[player] {M}равен вашему, невозможно его понизить'
+
+  nextStatusIsEquals: '{P} {M}Новый статус игрока равен вашему, невозможно повысить!'
 
   minStatus: '{P} {M}Статус игрока {S}[player] минимальный, невозможно его понизить'

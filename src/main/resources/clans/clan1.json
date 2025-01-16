@@ -1,8 +1,9 @@
 {
   "prefix": "&cTEAM1",
   "level": 1,
-  "balance": 103,
-  "members": {
+  "balance": 100,
+  "maxPlayer": 4,
+  "playerStructure": {
     "leader": "ProGiple",
     "deputies": [
       "Dakota_"

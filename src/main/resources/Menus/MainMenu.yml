@@ -1,0 +1,124 @@
+title: "{M}Главное меню"
+size: 54
+decoration:
+  1:
+    material: BLACK_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    slots:
+      - "0-2"
+      - "6-9"
+      - "17-18"
+      - "26-27"
+      - "35-37"
+      - "41-42"
+  2:
+    material: GRAY_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    slots:
+      - '3'
+      - '5'
+      - '38'
+      - '40'
+items:
+  PlayersList:
+    material: WRITABLE_BOOK
+    slot:
+      row: 3
+      column: 4
+    displayName: " {M}Все участники клана"
+    lore: [ ]
+    enchanted: false
+    switchMenu: "MembersList"
+
+  bank:
+    material: GOLD_INGOT
+    slot:
+      row: 3
+      column: 5
+    displayName: "{M}Казна"
+    lore: [ ]
+    enchanted: false
+    switchMenu: "Bank"
+
+  clanLevelUp:
+    material: EMERALD
+    slot:
+      row: 3
+      column: 6
+    displayName: " {M}Уровни"
+    lore: [ ]
+    enchanted: false
+    switchMenu: "LevelUp"
+
+  storage:
+    material: BARREL
+    slot:
+      row: 4
+      column: 4
+    displayName: " {M}Хранилище"
+    lore: [ ]
+    enchanted: false
+    switchMenu: "Storage"
+
+
+  shop:
+    material: ENDER_CHEST
+    slot:
+      row: 4
+      column: 5
+    displayName: " {M}Магазин"
+    lore: [ ]
+    enchanted: false
+    switchMenu: "Shop"
+
+  spawner:
+    material: WRITABLE_BOOK
+    slot:
+      row: 4
+      column: 6
+    displayName: " {M}Линк Спавнера"
+    lore: [ ]
+    enchanted: false
+    switchMenu: "SpawnerMenu"
+
+  ClanInfoButton:
+    material: PAPER
+    slot:
+      row: 1
+      column: 5
+    amount: 1
+    lore:
+      - ''
+      - "{M}Лидер: [leader]"
+      - "{M}Участников: [playersAmount]"
+      - "{M}Уровень клана: [level]"
+      - "{M}Казна: [money]"
+      - "{M}Ваш статус: [status]"
+      - ''
+    reflected: true
+
+  InviteButton:
+    material: NAUTILUS_SHELL
+    displayName: " {M}Пригласить игрока в клан"
+    slot:
+      row: 6
+      column: 9
+    amount: 1
+    lore: [ ]
+    reflected: true
+
+  ClanLeaveDeleteButton:
+    material: BARRIER
+    displayName:
+      delete: " {E}Удалить клан"
+      leave: " {E}Выйти из клана"
+    slot:
+      row: 6
+      column: 5
+    amount: 1
+    lore: [ ]
+    reflected: true

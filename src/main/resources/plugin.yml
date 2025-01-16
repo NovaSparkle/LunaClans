@@ -2,3 +2,17 @@ name: LunaClans
 version: '${project.version}'
 main: org.novasparkle.lunaclans.LunaClans
 api-version: '1.16'
+author: NovaSparkle
+depend:
+  - DecentHolograms
+  - Vault
+  - PlaceholderAPI
+commands:
+  lunaclans:
+    aliases:
+      - lc
+      - clans
+      - clan
+permissions:
+  lunaclans.create:
+    default: false
