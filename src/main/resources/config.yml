@@ -1,3 +1,42 @@
 clan:
-  createCommand: '/clan create [tag] [prefix]'
-  changePrefix: '/clan prefix [new prefix]'
+  createCommand: '/clan create [тэг] [префикс]'
+  changePrefix: '/clan prefix [новый префикс]'
+  inviteCommand: '/clan invite [игрок]'
+  changeLeaderStatusTag: "DEPUTY_LEADER"
+
+
+Statuses:
+  LEADER:
+    priority: 4
+    prefix: "&l&eЛидер"
+  DEPUTY_LEADER:
+    priority: 3
+    prefix: "&сЗам.Лидера"
+  MODERATOR:
+    priority: 2
+    prefix: "&bМодератор"
+  MEMBER:
+    priority: 1
+    prefix: "&7Участник"
+
+
+ClanComponents:
+  STORAGE: "Хранилище Клана"
+  PLAYER_STORAGE: "Личный сейф"
+  SHOP: "Магазин Клана"
+  LINK: "Линк Спавнера"
+
+
+levelTypes:
+  OPENED:
+    material: LIME_STAINED_GLASS_PANE
+    enchanted: true
+    localName: 'Открыт'
+  NEXT:
+    material: YELLOW_STAINED_GLASS_PANE
+    enchanted: false
+    localName: 'Следующий'
+  CLOSED:
+    material: RED_STAINED_GLASS_PANE
+    enchanted: false
+    localName: 'Недоступен'

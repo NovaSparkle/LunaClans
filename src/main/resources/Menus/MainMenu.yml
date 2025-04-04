@@ -11,8 +11,9 @@ decoration:
       - "6-9"
       - "17-18"
       - "26-27"
-      - "35-37"
-      - "41-42"
+      - "35-36"
+      - "44-47"
+      - "51-52"
   2:
     material: GRAY_STAINED_GLASS_PANE
     displayName: "&7Разделитель"
@@ -21,20 +22,21 @@ decoration:
     slots:
       - '3'
       - '5'
-      - '38'
-      - '40'
+      - '48'
+      - '50'
 items:
+
   PlayersList:
-    material: WRITABLE_BOOK
+    material: MAP
     slot:
       row: 3
       column: 4
     displayName: " {M}Все участники клана"
     lore: [ ]
     enchanted: false
-    switchMenu: "MembersList"
+    switchMenu: "AllClanMembersMenu"
 
-  bank:
+  Bank:
     material: GOLD_INGOT
     slot:
       row: 3
@@ -42,9 +44,9 @@ items:
     displayName: "{M}Казна"
     lore: [ ]
     enchanted: false
-    switchMenu: "Bank"
+    switchMenu: "ClanBankMenu"
 
-  clanLevelUp:
+  ClanLevelUp:
     material: EMERALD
     slot:
       row: 3
@@ -52,9 +54,9 @@ items:
     displayName: " {M}Уровни"
     lore: [ ]
     enchanted: false
-    switchMenu: "LevelUp"
+    switchMenu: "ClanLevelUpMenu"
 
-  storage:
+  Storage:
     material: BARREL
     slot:
       row: 4
@@ -62,10 +64,9 @@ items:
     displayName: " {M}Хранилище"
     lore: [ ]
     enchanted: false
-    switchMenu: "Storage"
+    switchMenu: "ClanStorageMenu"
 
-
-  shop:
+  Shop:
     material: ENDER_CHEST
     slot:
       row: 4
@@ -73,9 +74,9 @@ items:
     displayName: " {M}Магазин"
     lore: [ ]
     enchanted: false
-    switchMenu: "Shop"
+    switchMenu: "ClanShopMenu"
 
-  spawner:
+  Spawner:
     material: WRITABLE_BOOK
     slot:
       row: 4
@@ -83,10 +84,21 @@ items:
     displayName: " {M}Линк Спавнера"
     lore: [ ]
     enchanted: false
-    switchMenu: "SpawnerMenu"
+    switchMenu: "LinkMenu"
+
+  ClanList:
+    material: PAPER
+    slot:
+      row: 1
+      column: 9
+    displayName: "{M}Список кланов"
+    lore: [ ]
+    amount: 1
+    enchanted: false
+    switchMenu: "ClanListMenu"
 
   ClanInfoButton:
-    material: PAPER
+    material: WRITABLE_BOOK
     slot:
       row: 1
       column: 5
@@ -122,3 +134,4 @@ items:
     amount: 1
     lore: [ ]
     reflected: true
+

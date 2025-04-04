@@ -1,14 +1,17 @@
 title: "{M}Участники клана"
 size: 54
 decoration:
-  enable: true
-  material: BLACK_STAINED_GLASS_PANE
-  slotsStr:
-    - "0-9"
-    - "17-18"
-    - "26-27"
-    - "35-36"
-    - "44-53"
+  1:
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    material: BLACK_STAINED_GLASS_PANE
+    slotsStr:
+      - "0-9"
+      - "17-18"
+      - "26-27"
+      - "35-36"
+      - "44-53"
 items:
   PlayerItem:
     - " "
@@ -17,13 +20,17 @@ items:
     - " {M}Киллов: {S}[Kills]"
     - " {M}Последний вход: {S}[lastLogin]"
     - " "
-  back:
+  BackButton:
     material: ARROW
     displayName: " {M}Обратно"
-    position:
+    slot:
       row: 6
       column: 5
     enchanted: false
+    fromMenu: 'MainMenu'
+    reflected: true
+
+
   info:
     material: WRITABLE_BOOK
     position:
@@ -38,6 +45,8 @@ items:
       - " {M}Каждого из них"
       - " "
     enchanted: false
+
+
   availableSlot:
     material: GREEN_STAINED_GLASS_PANE
     displayName: " Доступный слот для игрока"

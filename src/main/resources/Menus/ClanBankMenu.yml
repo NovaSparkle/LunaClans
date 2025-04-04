@@ -1,0 +1,120 @@
+title: "{M}Казна клана"
+size: 54
+decoration:
+  1:
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    material: BLACK_STAINED_GLASS_PANE
+    slots:
+      - "0-9"
+      - "17-18"
+      - "26-27"
+      - "35-36"
+      - "44-47"
+      - "51-53"
+  2:
+    material: GRAY_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    slots:
+      - '48'
+      - '50'
+items:
+  BankInfoButton:
+    material: MAP
+    amount: 1
+    displayName: '{M}Информация'
+    slot:
+      row: 3
+      column: 5
+    lore:
+      - ''
+      - '{M}Баланс: {S}[balance]'
+      - ''
+      - '{M}Здесь показывается общий баланс клана'
+      - '{M}Можно внести или снять монеты'
+      - ''
+    reflected: true
+
+  BackButton:
+    material: ARROW
+    displayName: " {M}Обратно"
+    slot:
+      row: 6
+      column: 5
+    enchanted: false
+    reflected: true
+
+BankButtons:
+  1000_Deposit:
+    material: GOLD_INGOT
+    displayName: '&eВнести 1000 Монет'
+    slot:
+      row: 4
+      column: 2
+    amount: 1
+    money: 1000
+    type: DEPOSIT
+    lore: [ ]
+
+
+  5000_Deposit:
+    material: GOLD_INGOT
+    displayName: '&eВнести 5000 Монет'
+    slot:
+      row: 4
+      column: 3
+    amount: 1
+    money: 5000
+    type: DEPOSIT
+    lore: [ ]
+
+
+  10000_Deposit:
+    material: GOLD_INGOT
+    displayName: '&eВнести 10000 Монет'
+    slot:
+      row: 4
+      column: 4
+    amount: 1
+    money: 10000
+    type: DEPOSIT
+    lore: [ ]
+
+  1000_Withdraw:
+    material: REDSTONE
+    displayName: '&cСнять 1000 Монет'
+    slot:
+      row: 4
+      column: 6
+    amount: 1
+    money: 1000
+    type: WITHDRAW
+    lore: [ ]
+
+
+  5000_Withdraw:
+    material: REDSTONE
+    displayName: '&cСнять 5000 Монет'
+    slot:
+      row: 4
+      column: 7
+    amount: 1
+    money: 5000
+    type: WITHDRAW
+    lore: [ ]
+
+
+  10000_Withdraw:
+    material: REDSTONE
+    displayName: '&cСнять 10000 Монет'
+    slot:
+      row: 4
+      column: 8
+    amount: 1
+    money: 10000
+    type: WITHDRAW
+    lore: [ ]
+

@@ -18,30 +18,50 @@ colors:
 
 messages:
   noPermission: '{P} {E}У вас нет прав на выполение этой команды!'
-
-  clickText: "    Создать клан"
-  createClanMessage: "    Клик -> "
+  noConsole: "{P} {E}Команду можно выполнять только от имени игрока!"
+  noClanPlaceholder: '{P} {E}Игрок не в клане'
+  clickText: "    Создать клан {Клик}"
   prefixChangeText: "    Сменить префикс клана {Клик}"
   inviteText: "    Пригласить игрока в клан {Клик}"
 
-  decorativeString: '⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶'
-
+  decorativeString: '⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶'
   playerOnline: "{R}Онлайн"
 
-  clanCreated: "{P} {M}Клан успешно создан!"
-  noConsole: "{P} {E}Команду можно выполнять только от имени игрока!"
-  cannotPromote: "{P} {M}Невозможно повысить участника {S}[member] {M}до статуса {S}[status]"
-  promoted: "{P} {M}участник {S}[member] повышен до статуса {S}[status]"
-  cannotDemote: "{P} {M}Невозможно понизить участника {S}[member] {M}до статуса {S}[status]"
-  demoted: "{P} {M}участник {S}[member] понижен до статуса {S}[status]"
-  reloadConfig: "{P} {M}Конфигурация перезагружена!"
+  pluginReloaded: "{P} {S}Все конфигурации и меню перезагружены"
+  bank:
+    DepositedToBank: '{P} Вы успешно положили [amount] в казну клана!'
+    WithdrawFromBank: '{P} Вы успешно сняли [amount] из казны клана!'
+    NotEnoughMoneyBank: '{P} {E}Недостаточно монет в казне!'
+    NotEnoughMoneyPlayer: '{P} {E}Недостаточно монет на вашем балансе!'
+    BankCapacityLimit: '{P} {E}Превышен лимит вместительности казны!'
+
+  clanCreated: "{P} {S}Клан успешно создан!"
+  hasClan: "{P} {E} Чтобы создать клан, вам нужно выйти из текущего!"
+
+
+  cannotPromote: "{P} {M}Невозможно повысить участника {M}[member] {S}до статуса {M}[status]"
+  promoted: "{P} {S}участник {M}[member] {S}повышен до статуса {M}[status]"
+  cannotDemote: "{P} {S}Невозможно понизить участника {M}[member] {S}до статуса {M}[status]"
+  demoted: "{P} {S}участник {M}[member] {S}понижен до статуса {S}[status]"
 
   lowerStatusPromote: '{P} {M}Статус игрока {S}[player] {M}выше вашего, невозможно его повысить'
   equalStatusPromote: '{P} {M}Статус игрока {S}[player] {M}равен вашему, невозможно его повысить'
-
   lowerStatusDemote: '{P} {M}Статус игрока {S}[player] {M}выше вашего, невозможно его понизить'
   equalStatusDemote: '{P} {M}Статус игрока {S}[player] {M}равен вашему, невозможно его понизить'
+  nextStatusIsEquals: '{P} {S}Новый статус игрока равен вашему, невозможно повысить!'
+  minStatus: '{P} {S}Статус игрока {M}[player] {S}минимальный, невозможно его понизить'
 
-  nextStatusIsEquals: '{P} {M}Новый статус игрока равен вашему, невозможно повысить!'
+  levels:
+    openedLevel: '{P} {S}Этот уровень уже открыт!'
+    nextLevelUnlocked: '{P} {S}Уровень открыт, теперь клану доступны новые возможности!'
+    closedLevel: '{P} {E}Уровень недоступен, откройте предыдущие!'
 
-  minStatus: '{P} {M}Статус игрока {S}[player] минимальный, невозможно его понизить'
+  storage:
+    hasViewer: '{P} {E}Невозможно открыть хранилище, поскольку оно открыто у игрока {M}[viewer]'
+    lockedSlot: '{P} {E}Этот слот недоступен, для открытия необходим уровень клана выше!'
+    noStorage: '{P} {E}Хранилище клана недоступно, необходим уровень выше!'
+    noSelfStorage: '{P} {E}Личные сейфы клана недоступны, необходим уровень выше!'
+
+  shop:
+    success: '{P} {S}Вы успешно приобрели {M}[item] (x[amount]) {S}по цене {M}[price] {S}монет'
+    limit: '{P} {E}Выкуплено максимальное кол-во предметов этого типа!'

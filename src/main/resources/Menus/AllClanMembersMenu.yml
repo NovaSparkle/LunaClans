@@ -11,8 +11,9 @@ decoration:
       - "6-9"
       - "17-18"
       - "26-27"
-      - "35-37"
-      - "41-43"
+      - "35-36"
+      - "44-47"
+      - "51-53"
   2:
     material: GRAY_STAINED_GLASS_PANE
     displayName: "&7Разделитель"
@@ -21,8 +22,8 @@ decoration:
     slots:
       - '3'
       - '5'
-      - '38'
-      - '40'
+      - '48'
+      - '50'
 
 
 items:
@@ -67,6 +68,7 @@ items:
       column: 9
     lore: [ ]
     enchanted: false
+    ignore: true
 
   PreviousButton:
     material: SPECTRAL_ARROW
@@ -77,16 +79,16 @@ items:
       column: 8
     lore: [ ]
     enchanted: false
+    ignore: true
 
   BackButton:
     material: ARROW
-    displayName: '{M}Обратно'
-    amount: 1
+    displayName: " {M}Обратно"
     slot:
       row: 6
       column: 5
-    lore: [ ]
     enchanted: false
+    reflected: true
 
 buttonsSlotsOrder:
   - 10

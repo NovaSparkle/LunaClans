@@ -9,7 +9,7 @@ import java.util.Objects;
 
 @Getter
 public class Member {
-    private final String nickName;
+    private final String name;
 
     @Setter
     private Status status;
@@ -17,10 +17,10 @@ public class Member {
     private final OfflinePlayer player;
 
 
-    public Member(String nickName, Status status) {
-        this.nickName = nickName;
+    public Member(String name, Status status) {
+        this.name = name;
         this.status = status;
-        this.player = Bukkit.getPlayerExact(this.nickName);
+        this.player = Bukkit.getPlayerExact(this.name);
     }
     public void sendMessage(String message) {
         if (this.player.isOnline())

@@ -11,11 +11,11 @@ public class Vault {
     private static Economy economy = null;
     public static void setupEconomy() {
         if (getServer().getPluginManager().getPlugin("Vault") == null) {
-            return;
+            throw new RuntimeException("No Vault Plugin!");
         }
         RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
         if (rsp == null) {
-            return;
+            throw new RuntimeException("No Economy Provider!");
         }
         economy = rsp.getProvider();
     }

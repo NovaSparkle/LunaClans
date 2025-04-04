@@ -11,6 +11,7 @@ decoration:
       - "17-18"
       - "26-27"
       - "35-44"
+
 items:
   ClanCreateButton:
     material: FIREWORK_STAR
@@ -32,4 +33,4 @@ items:
     lore: [ ]
     amount: 1
     enchanted: false
-    switchMenu: "ClansList"
+    switchMenu: "ClanListMenu"

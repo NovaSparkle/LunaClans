@@ -1,31 +1,28 @@
 package org.novasparkle.lunaclans.Clans.Members;
 
 import lombok.Getter;
-import org.novasparkle.lunaclans.LunaClans;
-
-import java.util.Arrays;
+import org.bukkit.configuration.ConfigurationSection;
 
 @Getter
-public enum Status {
-    MEMBER(1),
-    MODERATOR(2),
-    DEPUTY_LEADER(3),
-    LEADER(4);
+public class Status {
+    private final String tag;
     private final String prefix;
     private final int priority;
-    Status(int priority) {
-        this.priority = priority;
-        this.prefix = LunaClans.getINSTANCE().getConfig().getString("StatusPrefixes." + this.name());
+    Status(String tag, ConfigurationSection section) {
+        this.tag = tag;
+        this.priority = section.getInt("priority");
+        this.prefix = section.getString("prefix");
     }
     public boolean isLower(Status status) {
         return this.getPriority() < status.getPriority();
     }
+
     public Status next() {
-        if (this.priority > values().length - 1) return null;
-        return Arrays.stream(values()).filter(p -> p.priority == this.priority + 1).findFirst().orElse(null);
+        if (this.priority > StatusManager.getStats().size() - 1) throw new IndexOutOfBoundsException(this.priority);
+        return StatusManager.getStats().stream().filter(p -> p.priority == this.priority + 1).findFirst().orElse(null);
     }
     public Status previous() {
-        if (this.priority < 0) return null;
-        return Arrays.stream(values()).filter(p -> p.priority == this.priority - 1).findFirst().orElse(null);
+        if (this.priority < 0) throw new IndexOutOfBoundsException(this.priority);
+        return StatusManager.getStats().stream().filter(p -> p.priority == this.priority - 1).findFirst().orElse(null);
     }
 }

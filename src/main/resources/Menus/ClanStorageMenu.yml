@@ -1,0 +1,80 @@
+title: "{M}Хранилище Клана"
+size: 54
+decoration:
+  1:
+    material: BLACK_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    slots:
+      - "0-9"
+      - "17-18"
+      - "26-27"
+      - "35-36"
+      - "44-47"
+      - "51-53"
+  2:
+    material: GRAY_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    slots:
+      - '37-43'
+      - '48'
+      - '50'
+
+items:
+  BackButton:
+    material: ARROW
+    displayName: "{M}Обратно"
+    slot:
+      row: 6
+      column: 5
+    enchanted: false
+    reflected: true
+
+  SelfStorageButton:
+    material: LIGHT_GRAY_SHULKER_BOX
+    displayName: "{M}Личные слоты"
+    lore: [ ]
+    slot:
+      row: 5
+      column: 5
+    enchanted: true
+    switchMenu: 'ClanSelfStorageMenu'
+
+  LockedSlot:
+    material: RED_STAINED_GLASS_PANE
+    displayName: "{E}Недоступный слот"
+
+    enchanted: false
+    ignore: true
+
+  BoughtItem:
+    material: RED_WOOL
+    displayName: "{E}Изъятый предмет"
+    enchanted: false
+    ignore: true
+
+order:
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 28
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34

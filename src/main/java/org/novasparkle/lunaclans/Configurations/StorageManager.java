@@ -5,14 +5,14 @@ import org.novasparkle.lunaclans.LunaClans;
 import java.io.File;
 
 public class StorageManager {
-
-
     private final static File clansStorage;
     private final static File menusStorage;
+    private final static File selfStStorage;
 
     static {
         menusStorage = createStorage("Menus");
         clansStorage = createStorage("Clans");
+        selfStStorage = createStorage("PlayerStorages");
     }
 
     private static File createStorage(String fileName) {
@@ -29,6 +29,11 @@ public class StorageManager {
         if (clansStorage != null) {
             return clansStorage;
         } else throw new RuntimeException("Папки хранения конфигураций кланов не существует, невозможно выполнить действие!");
+    }
+    public static File getSelfStStorage() {
+        if (selfStStorage != null) {
+            return selfStStorage;
+        } else throw new RuntimeException("Папки хранения личных хранилищ не существует, невозможно выполнить действие!");
     }
 
     public static File getMenusStorage() {

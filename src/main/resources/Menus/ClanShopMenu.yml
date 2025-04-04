@@ -1,0 +1,172 @@
+title: "{M}Клановый Магазин"
+size: 54
+decoration:
+  1:
+    material: BLACK_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    slots:
+      - "0-9"
+      - "17-18"
+      - "26-27"
+      - "35-36"
+      - "44-47"
+      - "51-53"
+  2:
+    material: GRAY_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    slots:
+      - '10-16'
+      - '19'
+      - '25'
+      - '28'
+      - '34'
+      - '37-43'
+      - '48'
+      - '50'
+
+items:
+  BackButton:
+    material: ARROW
+    displayName: "{M}Обратно"
+    slot:
+      row: 6
+      column: 5
+    enchanted: false
+    reflected: true
+
+  LockedSlot:
+    material: RED_STAINED_GLASS_PANE
+    displayName: "{E}Недоступный слот"
+
+    enchanted: false
+    ignore: true
+
+  ConfirmItem:
+    material: LIME_STAINED_GLASS_PANE
+    displayName: '{M}Приобрести [type]'
+    lore:
+      - ''
+      - '{S}Предмет: {M}[item] (x[amount])'
+      - ''
+    amount: 1
+    ignore: true
+
+shop:
+  timeFormat: 'hh:mm:ss'
+  times:
+    - '06:00:00'
+    - '12:00:00'
+    - '22:00:00'
+    - '23:59:59'
+  items:
+    1:
+      material: APPLE
+      displayName: ''
+      amount: 1
+      price: 3200
+      limit: -1
+      lore:
+        - ''
+        - ' {M}Цена за стак: {S}[stackPrice]'
+        - ' {M}Цена за штуку: {S}[onePrice]'
+        - ''
+        - ' {M}Куплено кланом всего: {S}[bought]/[limit]'
+        - ''
+        - ' &fЛКМ, чтобы купить стак'
+        - ' &fПКМ, чтобы купить один предмет'
+        - ''
+    2:
+      material: STONE
+      displayName: ''
+      amount: 1
+      price: 3200
+      limit: -1
+      lore:
+        - ''
+        - ' {M}Цена за стак: {S}[stackPrice]'
+        - ' {M}Цена за штуку: {S}[onePrice]'
+        - ''
+        - ' {M}Куплено кланом всего: {S}[bought]/[limit]'
+        - ''
+        - ' &fЛКМ, чтобы купить стак'
+        - ' &fПКМ, чтобы купить один предмет'
+        - ''
+    3:
+      material: OBSIDIAN
+      displayName: "{M}Обсидианчик"
+      amount: 1
+      price: 3200
+      limit: -1
+      lore:
+        - ''
+        - ' {M}Цена за стак: {S}[stackPrice]'
+        - ' {M}Цена за штуку: {S}[onePrice]'
+        - ''
+        - ' {M}Куплено кланом всего: {S}[bought]/[limit]'
+        - ''
+        - ' &fЛКМ, чтобы купить стак'
+        - ' &fПКМ, чтобы купить один предмет'
+        - ''
+    4:
+      material: QUARTZ_BLOCK
+      displayName: ''
+      amount: 1
+      price: 32000
+      limit: -1
+      lore:
+        - ''
+        - ' {M}Цена за стак: {S}[stackPrice]'
+        - ' {M}Цена за штуку: {S}[onePrice]'
+        - ''
+        - ' {M}Куплено кланом всего: {S}[bought]/[limit]'
+        - ''
+        - ' &fЛКМ, чтобы купить стак'
+        - ' &fПКМ, чтобы купить один предмет'
+        - ''
+    5:
+      material: DIAMOND_BLOCK
+      displayName: ''
+      amount: 1
+      price: 100000
+      limit: -1
+      lore:
+        - ''
+        - ' {M}Цена за стак: {S}[stackPrice]'
+        - ' {M}Цена за штуку: {S}[onePrice]'
+        - ''
+        - ' {M}Куплено кланом всего: {S}[bought]/[limit]'
+        - ''
+        - ' &fЛКМ, чтобы купить стак'
+        - ' &fПКМ, чтобы купить один предмет'
+        - ''
+    6:
+      material: SHULKER_SHELL
+      displayName: ''
+      amount: 1
+      price: 10000
+      limit: -1
+      lore:
+        - ''
+        - ' {M}Цена за стак: {S}[stackPrice]'
+        - ' {M}Цена за штуку: {S}[onePrice]'
+        - ''
+        - ' {M}Куплено кланом всего: {S}[bought]/[limit]'
+        - ''
+        - ' &fЛКМ, чтобы купить стак'
+        - ' &fПКМ, чтобы купить один предмет'
+        - ''
+order:
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33

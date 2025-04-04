@@ -4,6 +4,7 @@ main: org.novasparkle.lunaclans.LunaClans
 api-version: '1.16'
 author: NovaSparkle
 depend:
+  - LunaSpring
   - DecentHolograms
   - Vault
   - PlaceholderAPI

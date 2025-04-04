@@ -1,28 +1,32 @@
 package org.novasparkle.lunaclans.Menus.Abs;
 
 
+import lombok.Getter;
+import lombok.SneakyThrows;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.inventory.ItemStack;
-import org.novasparkle.lunaclans.Items.Button;
+import org.jetbrains.annotations.Nullable;
 import org.novasparkle.lunaclans.Items.SwitchButton;
-import org.novasparkle.lunaspring.Menus.AMenu;
-import org.novasparkle.lunaspring.Menus.Items.Item;
-import org.novasparkle.lunaspring.Util.Utils;
+import org.novasparkle.lunaclans.LunaClans;
+import org.novasparkle.lunaspring.API.Configuration.Configuration;
+import org.novasparkle.lunaspring.API.Menus.AMenu;
+import org.novasparkle.lunaspring.API.Menus.Items.Item;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 
 public class Menu extends AMenu {
-    private final Menus menu;
-    public Menu(Player player, Menus menu) {
+    private final EMenu eMenu;
+    @Getter
+    private final Menu fromMenu;
+    public Menu(Player player, EMenu eMenu, @Nullable Menu fromMenu) {
         super(player);
-        this.menu = menu;
-        this.initialize(menu.getConfiguration().self(), true);
+        this.eMenu = eMenu;
+        this.fromMenu = fromMenu;
+        this.initialize(eMenu.getConfiguration().self(), true);
     }
 
     @Override
@@ -31,55 +35,65 @@ public class Menu extends AMenu {
         this.insertAllItems();
     }
 
-    public FileConfiguration getConfig() {
-        return this.menu.getConfiguration().self();
+    public Configuration getConfig() {
+        return this.eMenu.getConfiguration();
     }
 
     @Override
     public void onClick(InventoryClickEvent e) {
         e.setCancelled(true);
         ItemStack clickedItem = e.getCurrentItem();
-        if (clickedItem != null) {
-            Item item = this.findFirstItem(clickedItem);
-            System.out.println(item.getClass().getName());
-            if (item instanceof Button) {
-                System.out.println("+");
-                ((Button) item).onClick(this.getPlayer());
-            }
-        }
+        if (clickedItem != null) this.findFirstItem(clickedItem).onClick(e);
     }
 
     @Override
     public void onClose(InventoryCloseEvent e) {}
+
+    @SneakyThrows
     protected void reflectiveInsertItems() {
-        ConfigurationSection section = menu.getConfiguration().getSection("items");
+        ConfigurationSection section = eMenu.getConfiguration().getSection("items");
         assert section != null;
         for (String key : section.getKeys(false)) {
             ConfigurationSection itemSection = section.getConfigurationSection(key);
             assert itemSection != null;
-            Menus switchMenu = Menus.getByFileName(itemSection.getString("switchMenu"));
             if (itemSection.getBoolean("ignore")) {
-                Utils.info(String.format("Кнопка %s пропущена, Меню - %s", itemSection.getName(), menu.name()));
+                LunaClans.getINSTANCE().info(String.format("Кнопка %s пропущена, Меню - %s", itemSection.getName(), eMenu.name()));
                 continue;
             }
+            EMenu switchMenu = EMenu.getByFileName(itemSection.getString("switchMenu"));
+
             if (switchMenu != null) {
-                this.addItems(new SwitchButton(itemSection, switchMenu));
+                this.addItems(new SwitchButton(itemSection, switchMenu, this));
+
             } else if (itemSection.getBoolean("reflected")) {
+                Constructor<?> constructor = null;
+                Class<?> clazz = null;
                 try {
-                    Class<?> clazz = Class.forName(String.format("org.novasparkle.lunaclans.Items.%s", itemSection.getName()));
-                    if (!Button.class.isAssignableFrom(clazz)) {
+                    clazz = Class.forName(String.format("org.novasparkle.lunaclans.Items.reflection.%s", itemSection.getName()));
+                    if (!Item.class.isAssignableFrom(clazz)) {
                         throw new RuntimeException(String.format("Указанный класс не является кнопкой: %s", itemSection.getName()));
                     }
-                    Constructor<?> constructor = clazz.getConstructor(ConfigurationSection.class);
+
+                    constructor = clazz.getConstructor(ConfigurationSection.class);
                     Item btn = (Item) constructor.newInstance(itemSection);
                     this.addItems(btn);
-                    Utils.info(String.format("Кнопка %s создана искусственно", itemSection.getName()));
-                } catch (ClassNotFoundException |
-                         NoSuchMethodException |
-                         InvocationTargetException |
-                         InstantiationException |
-                         IllegalAccessException ex) {
-                    throw new RuntimeException(ex);
+
+                } catch (NoSuchMethodException noSuchMethodException) {
+                    try {
+                        constructor = clazz.getConstructor(ConfigurationSection.class, Player.class);
+                        Item btn = (Item) constructor.newInstance(itemSection, this.getPlayer());
+                        this.addItems(btn);
+                    } catch (NoSuchMethodException e) {
+                        constructor = clazz.getConstructor(ConfigurationSection.class, Menu.class);
+                        Item btn = (Item) constructor.newInstance(itemSection, this.fromMenu);
+                        this.addItems(btn);
+                    }
+
+                } finally {
+                    if (constructor == null) {
+                        throw new RuntimeException(String.format("Неверно указано имя кнопки %s! Смотрите документацию!", itemSection.getName()));
+                    }
+                    LunaClans.getINSTANCE().info(String.format("Кнопка %s создана искусственно", itemSection.getName()));
                 }
             } else {
                 this.addItems(new Item(itemSection, true));

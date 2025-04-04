@@ -4,17 +4,21 @@ import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.novasparkle.lunaclans.Clans.Clan;
-import org.novasparkle.lunaclans.Menus.Abs.Menus;
+import org.novasparkle.lunaclans.Clans.Members.ClansManager;
+import org.novasparkle.lunaclans.Menus.Abs.EMenu;
+import org.novasparkle.lunaclans.Menus.Abs.Menu;
 import org.novasparkle.lunaclans.Menus.Abs.PageMenu;
-import org.novasparkle.lunaspring.Menus.Items.Item;
+import org.novasparkle.lunaspring.API.Menus.Items.Item;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
-public class ClansList extends PageMenu<Clan> {
-    public ClansList(Player player, Menus menu) {
-        super(player, menu);
+public final class ClansList extends PageMenu<Clan> {
+    public ClansList(Player player, EMenu menu, Menu fromMenu) {
+        super(player, menu, fromMenu);
+        List<Clan> clans = ClansManager.getClans();
+        this.partition(clans);
     }
 
     @Override
@@ -22,17 +26,28 @@ public class ClansList extends PageMenu<Clan> {
         for (int i : this.order) {
             this.getInventory().setItem(i, null);
         }
+        this.clear();
         this.setPage(page);
 
-        ConfigurationSection section = this.getConfig().getConfigurationSection("items.ClanItem");
-        Iterator<Clan> iter = this.allItems.get(this.getPage()).iterator();
-        assert section != null;
-        for (int slot: this.order) {
-            if (iter.hasNext()) {
-                ClanItem clanItem = new ClanItem(section, iter.next());
-                clanItem.setSlot((byte) slot);
-                this.addItems(clanItem);
+        if (!this.allItems.isEmpty()) {
+            ConfigurationSection section = this.getConfig().getSection("items.ClanItem");
+            Iterator<Clan> iter = this.allItems.get(this.getPage() - 1).iterator();
+            assert section != null;
+            for (int slot: this.order) {
+                if (iter.hasNext()) {
+                    Clan clan = iter.next();
+
+                    ClanItem clanItem = new ClanItem(section, clan);
+                    clanItem.setSlot((byte) slot);
+                    this.addItems(clanItem);
+                }
             }
+        }
+        if (this.allItems.size() > 1 && this.getPage() - 1 != this.allItems.size()) {
+            this.addItems(new NextButton(this.getConfig().getSection("items.NextButton")));
+        }
+        if (this.getPage() > 1) {
+            this.addItems(new PreviousButton(this.getConfig().getSection("items.PreviousButton")));
         }
         this.insertAllItems();
     }
@@ -46,10 +61,10 @@ public class ClansList extends PageMenu<Clan> {
 
             List<String> lore = section.getStringList("lore");
 
-            lore.replaceAll(l -> l.replace("[players]", String.valueOf(clan.getStructure().getMembersCount())
-                            .replace("[leader]", clan.getStructure().getLeader().getNickName()
+            lore.replaceAll(l -> l.replace("[players]", String.valueOf(clan.getStructure().getMembersCount()))
+                            .replace("[leader]", clan.getStructure().getLeader().getName())
                             .replace("[level]", String.valueOf(clan.getLevel()))
-                            .replace("[balance]", String.valueOf(clan.getLevel())))));
+                            .replace("[balance]", String.valueOf(clan.getLevel())));
 
             this.setLore(lore);
         }

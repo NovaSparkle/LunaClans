@@ -1,126 +1,352 @@
 title: "{M}Уровни клана"
 size: 45
 decoration:
-  enable: true
-  material: BLACK_STAINED_GLASS_PANE
-  slots:
-    - "0-9"
-    - "17-18"
-    - "26-27"
-    - "35-44"
-structure:
-  positions:
-    - 28
-    - 19
-    - 10
-    - 11
-    - 12
-    - 21
-    - 22
-    - 23
-    - 14
-    - 15
-    - 16
-    - 25
-    - 34
-  levels:
-    0:
-      maxPlayers: 3
-      maxBank: 15000
-    1:
-      cost: 10000
-      maxPlayers: 5
-      maxBank: 30000
-    2:
-      cost: 25000
-      maxPlayers: 6
-      maxBank: 50000
-      newOption: Storage
-      maxStorage: 4
-    3:
-      cost: 50000
-      maxPlayers: 7
-      maxBank: 75000
-      maxStorage: 5
-    4:
-      cost: 75000
-      maxPlayers: 8
-      maxBank: 100000
-      newOption: PlayerStorage
-      maxStorage: 7
-      maxPlayerStorage: 5
-    5:
-      cost: 100000
-      maxPlayers: 9
-      maxBank: 130000
-      maxStorage: 9
-      maxPlayerStorage: 6
-    6:
-      cost: 150000
-      maxPlayers: 10
-      newOption: Shop
-      maxShop: 2
-      maxBank: 200000
-      maxStorage: 11
-      maxPlayerStorage: 7
-    7:
-      cost: 180000
-      maxPlayers: 12
-      maxShop: 4
-      maxBank: 225000
-      maxStorage: 13
-      maxPlayerStorage: 9
-    8:
-      cost: 220000
-      maxPlayers: 15
-      newOption: Spawner
-      maxSpawner: 1
-      maxShop: 5
-      maxBank: 250000
-      maxStorage: 17
-      maxPlayerStorage: 11
-    9:
-      cost: 300000
-      maxPlayers: 17
-      maxShop: 6
-      maxBank: 225000
-      maxStorage: 20
-      maxPlayerStorage: 12
-    10:
-      cost: 380000
-      maxPlayers: 20
-      maxSpawner: 2
-      maxShop: 8
-      maxBank: 225000
-      maxStorage: 22
-      maxPlayerStorage: 13
-    11:
-      cost: 435000
-      maxPlayers: 25
-      maxShop: 9
-      maxBank: 225000
-      maxStorage: 24
-      maxPlayerStorage: 14
-    12:
-      cost: 500000
-      maxPlayers: 30
-      maxSpawner: 3
-      maxShop: 10
-      maxBank: 225000
-      maxStorage: 27
-      maxPlayerStorage: 15
-
-#     Full Cost -> 2425000
+  1:
+    material: BLACK_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    slots:
+      - "0-9"
+      - "17-18"
+      - "26-27"
+      - "35-38"
+      - "42-44"
+  2:
+    material: GRAY_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    slots:
+      - '39'
+      - '41'
 
 items:
-  back:
+  BackButton:
     material: ARROW
     displayName: " {M}Обратно"
-    position:
-      row: 6
+    slot:
+      row: 5
       column: 5
     enchanted: false
-  openedLevel:
-    material: GREEN_STAINED_GLASS_PANE
-    displayName: " {M}Открытый уровень {S}[level]"
-    enchanted: true
+    reflected: true
+
+firstLevel: 0
+levels:
+  0:
+    amount: 1
+    lore:
+      - ''
+      - '{M}Статус: {S}[levelStatus]'
+      - '{M}Максимум игроков: {S}3'
+      - '{M}Вместительность казны: {S}15000 монет'
+      - ''
+    displayName: '{M}Zero-Level'
+    slot:
+      row: 4
+      column: 2
+
+    playersLimit: 3
+    bankCapacity: 15000
+
+
+  1:
+    amount: 1
+    lore:
+      - ''
+      - '{M}Статус: {S}[levelStatus]'
+      - '{M}Цена уровня: {S}[cost] монет'
+      - '{M}Максимум игроков: {S}[playersLimit]'
+      - '{M}Вместительность казны: {S}[bankCapacity] монет'
+      - ''
+    displayName: '{M}Уровень 1'
+    slot:
+      row: 3
+      column: 2
+
+    cost: 10000
+    playersLimit: 5
+    bankCapacity: 30000
+
+
+  2:
+    amount: 1
+    lore:
+      - ''
+      - '{M}Статус: {S}[levelStatus]'
+      - '{M}Цена уровня: {S}[cost] монет'
+      - '{M}Максимум игроков: {S}[playersLimit]'
+      - '{M}Вместительность казны: {S}[bankCapacity]'
+      - ""
+      - '{M}Открыто: {S}[newOption]'
+      - '{M}Слотов в хранилище: {S}[storageCapacity]'
+      - ''
+    displayName: '{M}Уровень 2'
+    slot:
+      row: 2
+      column: 2
+
+    cost: 25000
+    playersLimit: 6
+    bankCapacity: 50000
+    newOption: STORAGE
+    storageCapacity: 4
+
+
+  3:
+    amount: 1
+    lore:
+      - ''
+      - '{M}Статус: {S}[levelStatus]'
+      - '{M}Цена уровня: {S}[cost] монет'
+      - '{M}Максимум игроков: {S}[playersLimit]'
+      - '{M}Вместительность казны: {S}[bankCapacity]'
+      - '{M}Слотов в хранилище: {S}[storageCapacity]'
+      - ''
+    displayName: '{M}Уровень 3'
+    slot:
+      row: 2
+      column: 3
+
+    cost: 50000
+    playersLimit: 7
+    bankCapacity: 75000
+    storageCapacity: 5
+
+
+  4:
+    amount: 1
+    lore:
+      - ''
+      - '{M}Статус: {S}[levelStatus]'
+      - '{M}Цена уровня: {S}[cost] монет'
+      - '{M}Максимум игроков: {S}[playersLimit]'
+      - '{M}Вместительность казны: {S}[bankCapacity]'
+      - '{M}Слотов в хранилище: {S}[storageCapacity]'
+      - ''
+      - '{M}Открыто: {S}[newOption]'
+      - '{M}Слотов в личном сейфе: {S}[playerStorageCapacity]'
+      - ''
+    displayName: '{M}Уровень 4'
+    slot:
+      row: 2
+      column: 4
+
+    cost: 75000
+    playersLimit: 8
+    bankCapacity: 100000
+    storageCapacity: 7
+    newOption: PLAYER_STORAGE
+    playerStorageCapacity: 5
+
+
+  5:
+    amount: 1
+    lore:
+      - ''
+      - '{M}Статус: {S}[levelStatus]'
+      - '{M}Цена уровня: {S}[cost] монет'
+      - '{M}Максимум игроков: {S}[playersLimit]'
+      - '{M}Вместительность казны: {S}[bankCapacity]'
+      - '{M}Слотов в хранилище: {S}[storageCapacity]'
+      - '{M}Слотов в личном сейфе: {S}[playerStorageCapacity]'
+      - ''
+    displayName: '{M}Уровень 5'
+    slot:
+      row: 3
+      column: 4
+
+    cost: 100000
+    playersLimit: 9
+    bankCapacity: 130000
+    storageCapacity: 9
+    playerStorageCapacity: 6
+
+
+  6:
+    amount: 1
+    lore:
+      - ''
+      - '{M}Статус: {S}[levelStatus]'
+      - '{M}Цена уровня: {S}[cost] монет'
+      - '{M}Максимум игроков: {S}[playersLimit]'
+      - '{M}Вместительность казны: {S}[bankCapacity]'
+      - '{M}Слотов в хранилище: {S}[storageCapacity]'
+      - '{M}Слотов в личном сейфе: {S}[playerStorageCapacity]'
+      - ''
+      - '{M}Открыто: {S}[newOption]'
+      - '{M}Слотов в магазине: {S}[shopLimit]'
+      - ''
+    displayName: '{M}Уровень 6'
+    slot:
+      row: 3
+      column: 5
+
+
+    cost: 150000
+    playersLimit: 10
+    bankCapacity: 200000
+    storageCapacity: 11
+    playerStorageCapacity: 7
+
+    newOption: SHOP
+    shopLimit: 2
+
+
+  7:
+    amount: 1
+    lore:
+      - ''
+      - '{M}Статус: {S}[levelStatus]'
+      - '{M}Цена уровня: {S}[cost] монет'
+      - '{M}Максимум игроков: {S}[playersLimit]'
+      - '{M}Вместительность казны: {S}[bankCapacity]'
+      - '{M}Слотов в хранилище: {S}[storageCapacity]'
+      - '{M}Слотов в личном сейфе: {S}[playerStorageCapacity]'
+      - '{M}Слотов в магазине: {S}[shopLimit]'
+      - ''
+    displayName: '{M}Уровень 7'
+    slot:
+      row: 3
+      column: 6
+
+    cost: 180000
+    playersLimit: 12
+    bankCapacity: 225000
+    storageCapacity: 13
+    playerStorageCapacity: 9
+    shopLimit: 4
+
+  8:
+    amount: 1
+    lore:
+      - ''
+      - '{M}Статус: {S}[levelStatus]'
+      - '{M}Цена уровня: {S}[cost] монет'
+      - '{M}Максимум игроков: {S}[playersLimit]'
+      - '{M}Вместительность казны: {S}[bankCapacity]'
+      - '{M}Слотов в хранилище: {S}[storageCapacity]'
+      - '{M}Слотов в личном сейфе: {S}[playerStorageCapacity]'
+      - '{M}Слотов в магазине: {S}[shopLimit]'
+      - ''
+      - '{M}Открыто: {S}[newOption]'
+      - '{M}Возможности в спавнере: {S}[spawnerLimit]'
+      - ''
+    displayName: '{M}Уровень 8'
+    slot:
+      row: 2
+      column: 6
+
+    cost: 220000
+    playersLimit: 15
+    bankCapacity: 250000
+    storageCapacity: 17
+    playerStorageCapacity: 11
+    shopLimit: 5
+    newOption: LINK
+    spawnerLimit: 1
+
+
+  9:
+    amount: 1
+    lore:
+      - ''
+      - '{M}Статус: {S}[levelStatus]'
+      - '{M}Цена уровня: {S}[cost] монет'
+      - '{M}Максимум игроков: {S}[playersLimit]'
+      - '{M}Вместительность казны: {S}[bankCapacity]'
+      - '{M}Слотов в хранилище: {S}[storageCapacity]'
+      - '{M}Слотов в личном сейфе: {S}[playerStorageCapacity]'
+      - '{M}Слотов в магазине: {S}[shopLimit]'
+      - ''
+    displayName: '{M}Уровень 9'
+    slot:
+      row: 2
+      column: 7
+
+    cost: 300000
+    playersLimit: 17
+    bankCapacity: 225000
+    storageCapacity: 20
+    playerStorageCapacity: 12
+    shopLimit: 6
+
+
+  10:
+    amount: 1
+    lore:
+      - ''
+      - '{M}Статус: {S}[levelStatus]'
+      - '{M}Цена уровня: {S}[cost] монет'
+      - '{M}Максимум игроков: {S}[playersLimit]'
+      - '{M}Вместительность казны: {S}[bankCapacity]'
+      - '{M}Слотов в хранилище: {S}[storageCapacity]'
+      - '{M}Слотов в личном сейфе: {S}[playerStorageCapacity]'
+      - '{M}Слотов в магазине: {S}[shopLimit]'
+      - '{M}Возможности в спавнере: {S}[spawnerLimit]'
+      - ''
+    displayName: '{M}Уровень 10'
+    slot:
+      row: 2
+      column: 8
+
+    cost: 380000
+    playersLimit: 20
+    bankCapacity: 225000
+    storageCapacity: 22
+    playerStorageCapacity: 13
+    shopLimit: 8
+    spawnerLimit: 2
+
+
+  11:
+    amount: 1
+    lore:
+      - ''
+      - '{M}Статус: {S}[levelStatus]'
+      - '{M}Цена уровня: {S}[cost] монет'
+      - '{M}Максимум игроков: {S}[playersLimit]'
+      - '{M}Вместительность казны: {S}[bankCapacity]'
+      - '{M}Слотов в хранилище: {S}[storageCapacity]'
+      - '{M}Слотов в личном сейфе: {S}[playerStorageCapacity]'
+      - '{M}Слотов в магазине: {S}[shopLimit]'
+      - ''
+    displayName: '{M}Уровень 11'
+    slot:
+      row: 3
+      column: 8
+
+    cost: 435000
+    playersLimit: 25
+    shopLimit: 9
+    bankCapacity: 225000
+    storageCapacity: 24
+    playerStorageCapacity: 14
+
+
+  12:
+    amount: 1
+    lore:
+      - ''
+      - '{M}Статус: {S}[levelStatus]'
+      - '{M}Цена уровня: {S}[cost] монет'
+      - '{M}Максимум игроков: {S}[playersLimit]'
+      - '{M}Вместительность казны: {S}[bankCapacity]'
+      - '{M}Слотов в хранилище: {S}[storageCapacity]'
+      - '{M}Слотов в личном сейфе: {S}[playerStorageCapacity]'
+      - '{M}Слотов в магазине: {S}[shopLimit]'
+      - '{M}Возможности в спавнере: {S}[spawnerLimit]'
+      - ''
+    displayName: '{M}Уровень 12'
+    slot:
+      row: 4
+      column: 8
+
+    cost: 500000
+    playersLimit: 30
+    bankCapacity: 225000
+    storageCapacity: 27
+    playerStorageCapacity: 15
+    shopLimit: 10
+    spawnerLimit: 3
+#     Full Cost -> 2425000

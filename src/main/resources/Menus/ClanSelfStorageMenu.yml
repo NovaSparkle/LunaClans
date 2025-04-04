@@ -1,0 +1,64 @@
+title: "{M}Личный сейф"
+size: 54
+decoration:
+  1:
+    material: BLACK_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    slots:
+      - "0-9"
+      - "17-18"
+      - "26-27"
+      - "35-36"
+      - "44-47"
+      - "51-53"
+  2:
+    material: GRAY_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    slots:
+      - '10'
+      - '16'
+      - '19'
+      - '25'
+      - '28'
+      - '34'
+      - '37-43'
+      - '48'
+      - '50'
+
+items:
+  BackButton:
+    material: ARROW
+    displayName: "{M}Обратно"
+    slot:
+      row: 6
+      column: 5
+    enchanted: false
+    reflected: true
+
+  LockedSlot:
+    material: RED_STAINED_GLASS_PANE
+    displayName: "{E}Закрытый товар"
+
+    enchanted: false
+    ignore: true
+
+order:
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
